@@ -51,7 +51,7 @@ Samsung Operator for CMM-D는 Openshift 및 Kubernetes에서 테스트 검증 �
 |-------------------|-------------------|-------------------|
 |v1.27.10+c79e5e2|4.14.16|9.2
    
-또한 현재 CXL Extend Memory를 지원하는 System 으로 검증 되었으며, 이에 대한 상세한 내용은 [System Requirment](./Document/CXL_requierments.md) 문서를 참조하세요.
+또한 현재 CXL Extend Memory를 지원하는 System 으로 검증 되었으며, 이에 대한 상세한 내용은 [System Requirment](../Document/CXL_requierments.md) 문서를 참조하세요.
 
 <br>   
 
