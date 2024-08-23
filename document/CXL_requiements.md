@@ -84,7 +84,7 @@ CXL Memory Expander를 지원하는 INTEL BIOS의 경우 Total Memory에 CXL Mem
 포함되는 경우가 있고 아닌 경우가 있습니다. 현재 활용가이드의 BIOS 환경에서는 CXL Memory Expander 용량을   
 포함하지 않은 Local Memory 용량만 보여 주고 있습니다.   
 
-![image 1 - INTEL BIOS-Aptio Setup](./image/User_guide/Req_Intel_bios.png)
+![image 1 - INTEL BIOS-Aptio Setup](../document/images/Req_Intel_bios.png)
    
 <br>
 
@@ -97,7 +97,7 @@ I/O 환경을 제공합니다.
 ➔ Supermicro motherboard-X13 Series
 ```
    
-![image 2 - INTEL BIOS-Aptio Setup](./image/User_guide/Req_Intel_bios_1.png)
+![image 2 - INTEL BIOS-Aptio Setup](../document/images/Req_Intel_bios_1.png)
 
 <br>
 
@@ -107,7 +107,7 @@ I/O 환경을 제공합니다.
 CXL Security Level :<span style='background-color: yellow; color: red;'>[ Fully Trusted ]</span></b>
 <br>
 
-![image 3 - INTEL BIOS-Advanced Setup](./image/User_guide/Req_Intel_bios_2.png)
+![image 3 - INTEL BIOS-Advanced Setup](../document/images/Req_Intel_bios_2.png)
 <br>
 
 CXL Header 우회를 비활성화 합니다.   
@@ -116,7 +116,7 @@ CXL Header 우회를 비활성화 합니다.
 CXL Header bypass :<span style='background-color: yellow; color: red;'>[ Disable ]</span></b>
 <br>
 
-![image 4 - INTEL BIOS-Advanced Setup](./image/User_guide/Req_Intel_bios_3.png)
+![image 4 - INTEL BIOS-Advanced Setup](../document/images/Req_Intel_bios_3.png)
 <br>
 
 CPU0 에 대한 PCIe 포트의 분기 설정을 구성합니다.   
@@ -125,7 +125,7 @@ CPU0 에 대한 PCIe 포트의 분기 설정을 구성합니다.
 CPU0 Configuration ➔ IOU3 (IIO PCIe Port 3) : <span style='background-color: yellow; color: red;'>[ x16 ]</span></b>
 <br>
 
-![image 5 - INTEL BIOS-Advanced Setup](./image/User_guide/Req_Intel_bios_4.png)
+![image 5 - INTEL BIOS-Advanced Setup](../document/images/Req_Intel_bios_4.png)
 <br>
 
 CPU1 에 대한 PCIe 포트의 분기 설정을 구성합니다.   
@@ -134,7 +134,7 @@ CPU1 에 대한 PCIe 포트의 분기 설정을 구성합니다.
 CPU0 Configuration ➔ IOU3 (IIO PCIe Port 3) : <span style='background-color: yellow; color: red;'>[ x16 ]</span></b>
 <br>
 
-![image 6 - INTEL BIOS-Advanced Setup](./image/User_guide/Req_Intel_bios_5.png)
+![image 6 - INTEL BIOS-Advanced Setup](../document/images/Req_Intel_bios_5.png)
 <br>
 
 CXL Type 3 장치에 대한 레거시 지원을 활성화합니다.  
@@ -142,7 +142,7 @@ CXL Type 3 장치에 대한 레거시 지원을 활성화합니다.
 <b>➔ Advanced Menu ➔ NB Configuration ➔ Memory Configuration ➔ CXL Type3 legacy : <span style='background-color: yellow; color: red;'>[ Enable ]</span></b>
 <br>
 
-![image 7 - INTEL BIOS-Advanced Setup](./image/User_guide/Req_Intel_bios_6.png)
+![image 7 - INTEL BIOS-Advanced Setup](../document/images/Req_Intel_bios_6.png)
 <br>
 
 CXL EFI_MEMORY_SP 에 대한 설정을 진행합니다. <b>( Default : Enabled )</b>   
@@ -170,7 +170,7 @@ CXL Memory Expander를 지원하는 AMD BIOS의 경우 Total Memory에 CXL Memor
 Expander 용량이 포함되는 경우가 있고 아닌 경우가 있습니다. 현재 활용가이드의 BIOS 환경에서는   
 CXL Memory Expander 용량을 포함하지 않은 Local Memory 용량만 보여 주고 있습니다.   
 
-![image 8 - AMD BIOS-Aptio Setup](./image/User_guide/Req_amd_bios.png)
+![image 8 - AMD BIOS-Aptio Setup](../document/images/Req_amd_bios.png)
    
 <br>
 
@@ -183,7 +183,7 @@ AMD EPYC Genoa CPU 는 PCIe5.0 및 CXL(Compute Express Link) 1.1 상호 연결�
 ➔ Supermicro Motherboard-H13 Series
 ```
    
-![image 9 - AMD BIOS-Aptio Setup](./image/User_guide/Req_amd_bios_1.png)
+![image 9 - AMD BIOS-Aptio Setup](../document/images/Req_amd_bios_1.png)
    
 <br>
 
@@ -195,4 +195,4 @@ AMD EPYC Genoa CPU 는 PCIe5.0 및 CXL(Compute Express Link) 1.1 상호 연결�
 <b>➔ Disabled : Direct System Memory 사용 (BIOS 레벨에서 CXL Expander를 사전 활성화 후 OS 에서 Local memory 인식 후 사용)</b>   
 <br>   
    
-![image 10 - INTEL BIOS-Aptio Setup](./image/User_guide/Req_Intel_bios_2.png)
+![image 10 - INTEL BIOS-Aptio Setup](../document/images/Req_Intel_bios_2.png)
