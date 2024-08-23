@@ -51,7 +51,7 @@ Samsung Operator for CMM-D는 Openshift 및 Kubernetes에서 테스트 검증 �
 |-------------------|-------------------|-------------------|
 |v1.27.10+c79e5e2|4.14.16|9.2
    
-또한 현재 CXL Extend Memory를 지원하는 System 으로 검증 되었으며, 이에 대한 상세한 내용은 [System Requirment](./document/CXL_requiements.md) 문서를 참조하세요.
+또한 현재 CXL Extend Memory를 지원하는 System 으로 검증 되었으며, 이에 대한 상세한 내용은 [System Requirment](../document/CXL_requiements.md) 문서를 참조하세요.
 
 <br>   
 
@@ -64,7 +64,7 @@ Samsung CMM-D for Operator를 Install, Configuration, 활용하기 위한 Hardwa
 ## E2E Test
 Samsung CMM-D for Operator의 End To End Test는 사용자가 필요에 따라 Manualy 한 설정으로 CMM-D Memory를 할당하는 Pod를 생성 하거나, CMM-D 가 장착된 여러개 Node 중 Operator가 알아서 가장 적합한 Node에 Pod를 생성하는 테스트를 진항 합니다.
 
-E2E test는 실제 Samsung CMM-D 가 세팅되어 있는 Samsung 환경에 대서 진행 하였으며, Test에 대한 상세한 내용은 [E2E Test Document를](./E2E_Test_Guide.md) 참조하세요.
+E2E test는 실제 Samsung CMM-D 가 세팅되어 있는 Samsung 환경에 대서 진행 하였으며, Test에 대한 상세한 내용은 [E2E Test Document를](../document/E2E_Test_Guide.md) 참조하세요.
 
 
 
