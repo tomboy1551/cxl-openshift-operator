@@ -57,7 +57,7 @@ Samsung Operator for CMM-D는 Openshift 및 Kubernetes에서 테스트 검증 �
 
 ## Quick Start Guide
 Samsung CMM-D for Operator를 Install, Configuration, 활용하기 위한 Hardware 및 Software Requirment와 설치 및   
-사용방법은 [Install & User Guide](./Quick_Start_Guide.md) 문서를 참조하세요.   
+사용방법은 [Install & User Guide](../document/Quick_Start_Guide.md) 문서를 참조하세요.   
 
 <br>
 
