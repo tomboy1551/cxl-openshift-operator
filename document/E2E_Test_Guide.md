@@ -50,18 +50,18 @@ Samsung CMM-D Operator를 사용하는 방법에 대한 설명 입니다.
 	1) Redhat OCP Web Console Operator 검색   <br>  
 	   아래 그림은 Redhat OCP Web Console 접속시 첫 화면 입니다.   
 
-	   ![image 1 - Web Console Main Screen](./image/User_guide/webconsole_main.png)   
+	   ![image 1 - Web Console Main Screen](./document/images/webconsole_main.png)   
 	   <br>
 
 	   아래 그림은 Redhat OCP Web Console에서 Operator를 검색 하기위해 OperatorHub 메뉴를 클릭 했을 때의 화면 입니다.   
 
-	   ![image 2 - Web Console Operator Search](./image/User_guide/webconsole_operator_select.png)   
+	   ![image 2 - Web Console Operator Search](./document/images/webconsole_operator_select.png)   
 	   <br>
 
 	   아래 그림은 Samsung CMM-D for Operator를 검색하기위해 검색 하는 화면 입니다. 검색어를 입력 하면 해당 검색를   
 	   만족하는 Operator들이 검색 됩니다.   
 
-	   ![image 3 - Web Console Operator Search2](./image/User_guide/webconsole_operator_search.png)   
+	   ![image 3 - Web Console Operator Search2](./document/images/webconsole_operator_search.png)   
 	   <br>
 
 	2) Operator 선택 및 설치 옵션 지정   
@@ -69,19 +69,19 @@ Samsung CMM-D Operator를 사용하는 방법에 대한 설명 입니다.
 	   아래 그림은 1)번에서 검색한 Operator를 클릭 했을 때 설치 화면 입니다.   
 	   추가적으로 설치 시 필요한 옵션을 선택한 후 "Install" 버튼을 눌러 설치를 진행 합니다.   
 
-	   ![image 4 - Web Console Operator ](./image/User_guide/webconsole_operator_install_2.png)   
+	   ![image 4 - Web Console Operator ](./document/images/webconsole_operator_install_2.png)   
 	   <br>
 
 	3) Operator 설치   
 	
 	   아래 그림은 2)번 그림에서 Install 버튼을 눌렀을때 설치 중 화면 입니다.   <br>
 
-	   ![image 5 - Web Console Operator Install](./image/User_guide/webconsole_operator_install_3.png)   
+	   ![image 5 - Web Console Operator Install](./document/images/webconsole_operator_install_3.png)   
 	   <br>
 
 	   아래 그림은 Operator 설치가 완료 되었을 때의 화면 입니다.   
 
-	   ![image 6 - Web Console Operator Install 2](./image/User_guide/operator_install_success.png)   
+	   ![image 6 - Web Console Operator Install 2](./document/images/operator_install_success.png)   
 	   <br><br>   
 
 3. CRD (Custom Resource Definition)   
@@ -306,34 +306,34 @@ spec:
 <br>   
 
 > 3. CR 제출 (Pod 생성)   
->   ![image 1 - Manual Mode CR 제출 ](./image/User_guide/cr_creation_pod.png)   
+>   ![image 1 - Manual Mode CR 제출 ](./document/images/cr_creation_pod.png)   
 >   
 > 4. 생성된 Pod 확인   
 > 
 > ```bash
 > [kni@bastion work]$ oc get pod
 > ```  
->   ![image 1 - Manual Mode Pod 확인 ](./image/User_guide/시나리오_01_01.png)      
+>   ![image 1 - Manual Mode Pod 확인 ](./document/images/시나리오_01_01.png)      
 
   >> 할당된 memory resource 에 Stress Load 확인
-  >> ![image 1 - Manual Mode Pod 확인 ](./image/User_guide/시나리오_01_03.png)   
+  >> ![image 1 - Manual Mode Pod 확인 ](./document/images/시나리오_01_03.png)   
   >> 
   >> 할당된 memory resource 에 Stress Load 확인
-  >> ![image 1 - Manual Mode Pod 확인 ](./image/User_guide/시나리오_01_03.png)   
+  >> ![image 1 - Manual Mode Pod 확인 ](./document/images/시나리오_01_03.png)   
   >> 
   >> 할당된 cpu resource 에 Stress Load 확인
-  >> ![image 1 - Manual Mode Pod 확인 ](./image/User_guide/시나리오_01_04.png)   
+  >> ![image 1 - Manual Mode Pod 확인 ](./document/images/시나리오_01_04.png)   
 <br>   
 
 
 > 5. 생성된 Pod 삭제   
 >   
->   ![image 1 - Manual Mode Pod 삭제 ](./image/User_guide/cr_delete_pod.png)   
+>   ![image 1 - Manual Mode Pod 삭제 ](./document/images/cr_delete_pod.png)   
 <br>   
 
 > 6. 삭제된 Pod 확인   
 >   
->   ![image 1 - Manual Mode Pod 삭제 확인](./image/User_guide/cr_delete_check_pod.png)   
+>   ![image 1 - Manual Mode Pod 삭제 확인](./document/images/cr_delete_check_pod.png)   
 <br>   
    
    <br>
@@ -560,7 +560,7 @@ spec:
 > ```bash
 > [kni@bastion work]$ oc get pod
 > ```  
->   ![image 1 - Manual Mode Pod 확인 ](./image/User_guide/시나리오_02_01.png)      
+>   ![image 1 - Manual Mode Pod 확인 ](./document/images/시나리오_02_01.png)      
 >  <b>&#10102;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;테스트를 위해 사전에 생성된 Pod</b><br>
 >  <b>&#10103;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;테스트를 위에 생성된 Pod</b><br>
 
@@ -575,7 +575,7 @@ spec:
 
 > 6. 삭제된 Pod 확인   
 >   
->   ![image 1 - Manual Mode Pod 삭제 확인](./image/User_guide/시나리오_02_02.png)   
+>   ![image 1 - Manual Mode Pod 삭제 확인](./document/images/시나리오_02_02.png)   
 
 <br>
 <br>
@@ -651,4 +651,4 @@ spec:
 > ```bash
 > [kni@bastion work]$ oc get pod
 > ```  
->   ![image 1 - Manual Mode Pod 확인 ](./image/User_guide/시나리오_03_01.png)      
+>   ![image 1 - Manual Mode Pod 확인 ](./document/images/시나리오_03_01.png)      
