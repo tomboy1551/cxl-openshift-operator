@@ -46,18 +46,18 @@ Samsung CMM-D Operator를 사용하는 방법에 대한 설명 입니다.
 	1) Redhat OCP Web Console Operator 검색   <br>  
 	   아래 그림은 Redhat OCP Web Console 접속시 첫 화면 입니다.   
 
-	   ![image 1 - Web Console Main Screen](./image/webconsole_main.png)   
+	   ![image 1 - Web Console Main Screen](./images/webconsole_main.png)   
 	   <br>
 
 	   아래 그림은 Redhat OCP Web Console에서 Operator를 검색 하기위해 OperatorHub 메뉴를 클릭 했을 때의 화면 입니다.   
 
-	   ![image 2 - Web Console Operator Search](./image/webconsole_operator_select.png)   
+	   ![image 2 - Web Console Operator Search](./images/webconsole_operator_select.png)   
 	   <br>
 
 	   아래 그림은 Samsung CMM-D for Operator를 검색하기위해 검색 하는 화면 입니다. 검색어를 입력 하면 해당 검색를   
 	   만족하는 Operator들이 검색 됩니다.   
 
-	   ![image 3 - Web Console Operator Search2](./image/webconsole_operator_search.png)   
+	   ![image 3 - Web Console Operator Search2](./images/webconsole_operator_search.png)   
 	   <br>
 
 	2) Operator 선택 및 설치 옵션 지정   
@@ -65,19 +65,19 @@ Samsung CMM-D Operator를 사용하는 방법에 대한 설명 입니다.
 	   아래 그림은 1)번에서 검색한 Operator를 클릭 했을 때 설치 화면 입니다.   
 	   추가적으로 설치 시 필요한 옵션을 선택한 후 "Install" 버튼을 눌러 설치를 진행 합니다.   
 
-	   ![image 4 - Web Console Operator ](./image/webconsole_operator_install_2.png)   
+	   ![image 4 - Web Console Operator ](./images/webconsole_operator_install_2.png)   
 	   <br>
 
 	3) Operator 설치   
 	
 	   아래 그림은 2)번 그림에서 Install 버튼을 눌렀을때 설치 중 화면 입니다.   <br>
 
-	   ![image 5 - Web Console Operator Install](./image/webconsole_operator_install_3.png)   
+	   ![image 5 - Web Console Operator Install](./images/webconsole_operator_install_3.png)   
 	   <br>
 
 	   아래 그림은 Operator 설치가 완료 되었을 때의 화면 입니다.   
 
-	   ![image 6 - Web Console Operator Install 2](./image/operator_install_success.png)   
+	   ![image 6 - Web Console Operator Install 2](./images/operator_install_success.png)   
 	   <br><br>   
 
 3. Samsung CMM-D for Operator 사용예   
@@ -300,22 +300,22 @@ spec:
 
 > D. CR 제출 (Pod 생성)   
    
-   ![image 1 - Manual Mode CR 제출 ](./image/cr_creation_pod.png)   
+   ![image 1 - Manual Mode CR 제출 ](./images/cr_creation_pod.png)   
 <br>   
 
 > E. 생성된 Pod 확인   
    
-   ![image 1 - Manual Mode Pod 확인 ](./image/cr_create_check_pod.png)   
+   ![image 1 - Manual Mode Pod 확인 ](./images/cr_create_check_pod.png)   
 <br>   
 
 > F. 생성된 Pod 삭제   
    
-   ![image 1 - Manual Mode Pod 삭제 ](./image/cr_delete_pod.png)   
+   ![image 1 - Manual Mode Pod 삭제 ](./images/cr_delete_pod.png)   
 <br>   
 
 > G. 삭제된 Pod 확인   
    
-   ![image 1 - Manual Mode Pod 삭제 확인](./image/cr_delete_check_pod.png)   
+   ![image 1 - Manual Mode Pod 삭제 확인](./images/cr_delete_check_pod.png)   
 <br>   
 
 
@@ -397,20 +397,20 @@ spec:
 
 > E. CR 제출 (Pod 생성)   
    
-   ![image 1 - Manual Mode CR 제출 ](./image/cr_creation_pod.png)   
+   ![image 1 - Manual Mode CR 제출 ](./images/cr_creation_pod.png)   
 <br>   
 
 > F. 생성된 Pod 확인   
    
-   ![image 1 - Manual Mode Pod 확인 ](./image/cr_create_check_pod.png)   
+   ![image 1 - Manual Mode Pod 확인 ](./images/cr_create_check_pod.png)   
 <br>   
 
 > G. 생성된 Pod 삭제   
    
-   ![image 1 - Manual Mode Pod 삭제 ](./image/cr_delete_pod.png)   
+   ![image 1 - Manual Mode Pod 삭제 ](./images/cr_delete_pod.png)   
 <br>   
 
 > H. 삭제된 Pod 확인   
    
-   ![image 1 - Manual Mode Pod 삭제 확인](./image/cr_delete_check_pod.png)   
+   ![image 1 - Manual Mode Pod 삭제 확인](./images/cr_delete_check_pod.png)   
 <br>
