@@ -11,11 +11,8 @@ Samsung Operator for CMM-D는 PasS 환경에서 삼성이 제조한 CXL* Memory 
 
 ## Introduction
 
-컨테이너 기반의 애플리케이션을 배포 및 관리하는 플랫폼인 Red Hat Openshift 환경에서 서버내의 Local Memory(DRAM)와   
-[Samsung CMM-D](https://semiconductor.samsung.com/news-events/tech-blog/worlds-first-cmm-d-technology-leading-the-ai-era/) 를 통합하고, 통합된 이종 Memory를 필요에 따라 효율적으로 활용할 수 있는 Golang 기반의   
-Operator 입니다.   
-이 Operator는 사용자가 필요에 따라 Local Memory 또는 확장된 Samsung CMM-D 를 선택 및 할당하여 활용할 수 있는 기능을   
-제공하고, Red Hat의 Openshift Container Platform의 통제하에 안전하고, 효율적으로 활용할 수 있는 방법을 제공합니다.   
+컨테이너 기반의 애플리케이션을 배포 및 관리하는 플랫폼인 Red Hat Openshift 환경에서 서버내의 Local Memory(DRAM)와 [Samsung CMM-D](https://semiconductor.samsung.com/news-events/tech-blog/worlds-first-cmm-d-technology-leading-the-ai-era/) 를 통합하고, 통합된 이종 Memory를 필요에 따라 효율적으로 활용할 수 있는 Golang 기반의 Operator 입니다.   
+이 Operator는 사용자가 필요에 따라 Local Memory 또는 확장된 Samsung CMM-D 를 선택 및 할당하여 활용할 수 있는 기능을 제공하고, Red Hat의 Openshift Container Platform의 통제하에 안전하고, 효율적으로 활용할 수 있는 방법을 제공합니다.   
 그리고, CoreOS(커널)과 Openshift 수정이 필요 없어 Openshift에 대한 Redhat 지원에 문제가 없는 제품 입니다.
 
 Rad Hat Openshift Operator에 대한 상세한 내용은 [여기](https://docs.openshift.com/container-platform/4.15/operators/index.html) 를 참조하세요.
