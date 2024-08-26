@@ -306,41 +306,41 @@ spec:
 <br>   
 
 > 3. Submit the Custom Resource (Create Pod)   
->   ![image 1 - Manual Mode CR 제출 ](./images/cr_creation_pod.png)   
+>   ![image 1 - Manual Mode CR Submit ](./images/cr_creation_pod.png)   
 >   
 > 4. Check the Created Pod   
 > 
 > ```bash
 > [kni@bastion work]$ oc get pod
 > ```  
->   ![image 1 - Manual Mode Pod 확인 ](./images/시나리오_01_01.png)      
+>   ![image 1 - Manual Mode Pod Check ](./images/시나리오_01_01.png)      
 
-  >> 할당된 memory resource 에 Stress Load 확인
-  >> ![image 1 - Manual Mode Pod 확인 ](./images/시나리오_01_03.png)   
+  >> Check the stress load on the allocated memory resources
+  >> ![image 1 - Manual Mode Pod Check ](./images/시나리오_01_03.png)   
   >> 
-  >> 할당된 memory resource 에 Stress Load 확인
-  >> ![image 1 - Manual Mode Pod 확인 ](./images/시나리오_01_03.png)   
+  >> Check the stress load on the allocated memory resources
+  >> ![image 1 - Manual Mode Pod Check ](./images/시나리오_01_03.png)   
   >> 
-  >> 할당된 cpu resource 에 Stress Load 확인
-  >> ![image 1 - Manual Mode Pod 확인 ](./images/시나리오_01_04.png)   
+  >> Check the stress load on the assigned cpu resources
+  >> ![image 1 - Manual Mode Pod Check ](./images/시나리오_01_04.png)   
 <br>   
 
 
 > 5. Delete the Created Pod   
 >   
->   ![image 1 - Manual Mode Pod 삭제 ](./images/cr_delete_pod.png)   
+>   ![image 1 - Manual Mode Pod Delete ](./images/cr_delete_pod.png)   
 <br>   
 
 > 6. Check Deleted Pods   
 >   
->   ![image 1 - Manual Mode Pod 삭제 확인](./images/cr_delete_check_pod.png)   
+>   ![image 1 - Manual Mode Pod 삭제 Check](./images/cr_delete_check_pod.png)   
 <br>   
    
    <br>
    <br>
 
 
-### Test 시나리오 #2
+### Test Senario #2
 If you submit a request for generating a 200GB pod in Auto mode with 400GB pod assigned to the cmmd2 node among the nodes (cmmd1, cmmd2, cmmd3) in a Samsung environment with CMM-D set, test whether the pod is automatically generated in the node with the least press among the three nodes
   
 <br>    
