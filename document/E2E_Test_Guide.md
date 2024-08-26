@@ -246,18 +246,18 @@ After preparation, proceed with the test as follows.
    
 
 ### Test Scenario #1
-Test whether the designated CPU and memory are well utilized by specifying CPU and memory NUMA in manual mode on nodes (cmd1, cmmd2, cmmd3) in the Samsung environment with CMM-D set.
+By specifying CPU and Memory NUMA in __Manual mode__ on nodes (cmd1, cmmd2, cmmd3) in the Samsung environment with CMM-D configured, test whether the designated CPU and memory are utilized correctly.
   
 <br>    
 
-> 1. 실행 내용   
+> 1. Execution Details   
 
-- 대상 노드 : cmmd1 (intel cpu node)
+- Target Node : cmmd1 (intel cpu node)
 - allocationMode : manual
 - memory : 2 (CXL Memory NUMA)
 - cpu : 0-23 (cpu 0)
-- 리소스 할당량 : 100 GB
-- Pod 생성 및 삭제를 통한 리소스 회수   
+- Resource Quota : 100 GB
+- Resource Reclamation through Pod Creation and Deletion   
 <br>
 
 > 2. CR (Custom Resource)   
@@ -297,18 +297,18 @@ spec:
 
 ```
    
-   <b>&#10102;<span style="color:blue">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Resource를 지정하는 mode에 대한 기술사항 입니다. (manual : Resource를 할당하는 mode, auto : 가장 효율적인 node를 선택 하여 자동으로 할당 하는 mode)</span></b><br>
-   <b>&#10103;<span style="color:blue">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;manual mode 일때 지정될 CPU Core 정의</span></b><br>
-   <b>&#10104;<span style="color:blue">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;manual mode 일때 지정될 Memory NUMA 정의</span></b><br>
-   <b>&#10105;<span style="color:blue">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;생성할 Pod의 대상 node 이름 정의</span></b><br>
-   <b>&#10106;<span style="color:blue">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;CXL Device 활용 여부 (true : 사용, false : 비 사용)</span></b><br>
-   <b>&#10107;<span style="color:blue">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;요청/제한 Resource를 기술 합니다.</span></b><br>
+   <b>&#10102;<span style="color:blue">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;This is a technical description of the resource allocation modes(Manual: A mode for explicitly allocating resources by specifying them., Auto: A mode for automatically allocating resources by selecting the most efficient node.)</span></b><br>
+   <b>&#10103;<span style="color:blue">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Definition of CPU Cores when in Manual Mode</span></b><br>
+   <b>&#10104;<span style="color:blue">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Definition of Memory NUMA when in Manual Mode</span></b><br>
+   <b>&#10105;<span style="color:blue">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Define the target node name for the Pod to be created</span></b><br>
+   <b>&#10106;<span style="color:blue">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Whether to utilize the CXL device (true: use, false: do not use)</span></b><br>
+   <b>&#10107;<span style="color:blue">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Describes the requested/limited resources.</span></b><br>
 <br>   
 
-> 3. CR 제출 (Pod 생성)   
+> 3. Submit the Custom Resource (Create Pod)   
 >   ![image 1 - Manual Mode CR 제출 ](./images/cr_creation_pod.png)   
 >   
-> 4. 생성된 Pod 확인   
+> 4. Check the Created Pod   
 > 
 > ```bash
 > [kni@bastion work]$ oc get pod
@@ -326,12 +326,12 @@ spec:
 <br>   
 
 
-> 5. 생성된 Pod 삭제   
+> 5. Delete the Created Pod   
 >   
 >   ![image 1 - Manual Mode Pod 삭제 ](./images/cr_delete_pod.png)   
 <br>   
 
-> 6. 삭제된 Pod 확인   
+> 6. Check Deleted Pods   
 >   
 >   ![image 1 - Manual Mode Pod 삭제 확인](./images/cr_delete_check_pod.png)   
 <br>   
@@ -341,26 +341,26 @@ spec:
 
 
 ### Test 시나리오 #2
-CMM-D 가 세팅된 환경의 nodes (cmmd1, cmmd2, cmmd3) 중 cmmd2 node에 400GB 의 Pod가 할당되어 있는 상태에서 Auto mode로 200GB 의 Pod 생성요청을 제출 했을때, 3개 node 중 Pressure가 가장 적은 node에 자동으로 Pod가 생성 되는지 테스트 합니다.
+If you submit a request for generating a 200GB pod in Auto mode with 400GB pod assigned to the cmmd2 node among the nodes (cmmd1, cmmd2, cmmd3) in a Samsung environment with CMM-D set, test whether the pod is automatically generated in the node with the least press among the three nodes
   
 <br>    
 
-> 1. 사전 세팅 사항   
+> 1. Pre-Setting Details   
 
-- 대상 노드 : cmmd2
-- 권한 생성 : ServiceAccount 및 권한 생성 작업 진행
-- 리소스 할당량 : cmmd2 node CMM-D에 400 GB Pod 할당
+- Target Node : cmmd2
+- Create Permission : Proceed with Creating the ServiceAccount and Assigning Permissions
+- Resource Quota : Allocate a 400 GB Pod to the CMM-D on the cmmd2 node
 <br>
 
-> 2. 실행 내용   
+> 2. Execution Details   
 
-- 대상노드 : 모든 노드 (cmmd1, cmmd2, cmmd3)
+- Target Node : All nodes (cmmd1, cmmd2, cmmd3)
 - allocationMode : auto
-- 리소스 할당량 : 200 GB
-- Pod 생성 및 삭제를 통한 리소스 회수   
+- Resource Quota : 200 GB
+- Resource Reclamation through Pod Creation and Deletion   
 <br>
 
-> 3. ServiceAccount 및 권한생성   
+> 3. Create ServiceAccount and permissions   
 
 ```yaml
 ---
@@ -439,7 +439,7 @@ metadata:
 <br>
 
 
-> 4. cmmd2 서버 사전 할당 CR (Custom Resource)   
+> 4. Pre-allocated Custom Resource (CR) for the cmmd2 server   
 
 ```yaml
 apiVersion: cxl.antline.com/v1
@@ -488,11 +488,11 @@ spec:
 
 ```
    
-   <b>&#10102;<span style="color:blue">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Resource를 지정하는 mode에 대한 기술사항 입니다. (manual : Resource를 할당하는 mode, auto : 가장 효율적인 node를 선택 하여 자동으로 할당 하는 mode)</span></b><br>
-   <b>&#10103;<span style="color:blue">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;생성할 Pod의 대상 node 이름 정의</span></b><br>
-   <b>&#10104;<span style="color:blue">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;manual mode 일때 지정될 CPU Core 정의 (자동할당)</span></b><br>
-   <b>&#10105;<span style="color:blue">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;manual mode 일때 지정될 Memory NUMA 정의</span></b><br>
-   <b>&#10106;<span style="color:blue">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;요청 및 제한할 Resource 정보를 기술합니다</span></b><br>
+   <b>&#10102;<span style="color:blue">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;This is a technical description of the resource allocation modes(Manual: A mode for explicitly allocating resources by specifying them., Auto: A mode for automatically allocating resources by selecting the most efficient node.)</span></b><br>
+   <b>&#10103;<span style="color:blue">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Define the destination node name of the Pod to be created</span></b><br>
+   <b>&#10104;<span style="color:blue">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Define CPU Core to be specified in manual mode (automatic assignment)</span></b><br>
+   <b>&#10105;<span style="color:blue">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Define Memory NUMA to be specified in manual mode</span></b><br>
+   <b>&#10106;<span style="color:blue">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Describes the resource information to request and limit</span></b><br>
 <br>   
 
 > 5. Test CR (Custom Resource)   
@@ -539,57 +539,57 @@ spec:
 
 ```
    
-   <b>&#10102;<span style="color:blue">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Resource를 지정하는 mode에 대한 기술사항 입니다. (manual : Resource를 할당하는 mode, auto : 가장 효율적인 node를 선택 하여 자동으로 할당 하는 mode)</span></b><br>
-   <b>&#10103;<span style="color:blue">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;CXL 확장용 Memory 사용 여부를 기술합니다. (true:사용, false:사용하지 않음)</span></b><br>
+   <b>&#10102;<span style="color:blue">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;This is a technical description of the resource allocation modes(Manual: A mode for explicitly allocating resources by specifying them., Auto: A mode for automatically allocating resources by selecting the most efficient node.)</span></b><br>
+   <b>&#10103;<span style="color:blue">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Whether to utilize the CXL device (true: use, false: do not use)</span></b><br>
 <br>   
 
 
-> 6. CR 제출 (Pod 생성)   
->> 시나리오 사전 pod 생성
+> 6. Submit the Custom Resource (Create Pod)   
+>> Before Scenario Create pod
 >> ```bash
 >> [kni@bastion work]$ oc apply -f pre-app.yaml pod
 >> ```
 >>    
->> 시나리오 pod 생성 
+>> Scenario Create pod 
 >> ```bash
 >> [kni@bastion work]$ oc apply -f my-app.yaml pod
 >> ```
 >
-> 7. 생성된 Pod (사전, Test) 확인   
+> 7. Check Create pod (Before, Test)    
 > 
 > ```bash
 > [kni@bastion work]$ oc get pod
 > ```  
 >   ![image 1 - Manual Mode Pod 확인 ](./images/시나리오_02_01.png)      
->  <b>&#10102;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;테스트를 위해 사전에 생성된 Pod</b><br>
->  <b>&#10103;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;테스트를 위에 생성된 Pod</b><br>
+>  <b>&#10102;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Pre-generated pods for testing</b><br>
+>  <b>&#10103;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Test generated above Pod</b><br>
 
 ><br>   
 
-> 5. 생성된 Pod 삭제   
+> 5. Delete created pods   
 >   
 > ```bash
 > [kni@bastion work]$ oc delete -f pre-app.yaml pod
 > ```   
 >   
 
-> 6. 삭제된 Pod 확인   
+> 6. Check Deleted Pod   
 >   
->   ![image 1 - Manual Mode Pod 삭제 확인](./images/시나리오_02_02.png)   
+>   ![image 1 - Manual Mode Pod Check Delete](./images/시나리오_02_02.png)   
 
 <br>
 <br>
-### Test 시나리오 #3
-CMM-D 가 세팅된 환경의 nodes (cmmd1, cmmd2, cmmd3)에 CMM-D 장치 리소스를 사용 하지 않고, 각  node의 Local Memory 중 가장 Pressure가 가장 적은 node에 50GB의 Pod가 생성 되는지 테스트 합니다.   
+### Test Scenario #3
+Test that 50GB of Pod is created in the node with the least press value of each node's local memory, without using CMM-D device resources for nodes (cmmd1, cmmd2, cmmd3) in an environment where CMM-D is set   
 
 <br>    
    
-> 1. 실행 내용   
+> 1. Execution Details   
 
-- 대상 노드 : 모든 노드 (cmmd1, cmmd2, cmmd3)
+- Target Node : All nodes (cmmd1, cmmd2, cmmd3)
 - allocationMode : auto
 - enable : false
-- 리소스 할당량 : 50 GB
+- Resource Quota : 50 GB
 
 <br>
 
@@ -637,16 +637,16 @@ spec:
 
 ```
    
-   <b>&#10102;<span style="color:blue">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Resource를 지정하는 mode에 대한 기술사항 입니다. (manual : Resource를 할당하는 mode, auto : 가장 효율적인 node를 선택 하여 자동으로 할당 하는 mode)</span></b><br>
-   <b>&#10103;<span style="color:blue">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;CXL Device 활용 여부 (true : 사용, false : 비 사용)</span></b><br>
+   <b>&#10102;<span style="color:blue">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;This is a technical description of the resource allocation modes(Manual: A mode for explicitly allocating resources by specifying them., Auto: A mode for automatically allocating resources by selecting the most efficient node.)</span></b><br>
+   <b>&#10103;<span style="color:blue">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Whether to utilize the CXL device (true: use, false: do not use)</span></b><br>
 <br>   
 
-> 3. CR 제출 (Pod 생성)   
+> 3. Submit the Custom Resource (Create Pod)   
 > ```bash
 > [kni@bastion work]$ oc apply -f my-app.yaml pod
 > ``` 
 >   
-> 4. 생성된 Pod 확인   
+> 4. Check the Created Pod  
 > 
 > ```bash
 > [kni@bastion work]$ oc get pod
