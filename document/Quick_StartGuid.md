@@ -237,6 +237,7 @@ status:
  	- 사용자가 CR 에서 제공하는 Properties를 manual로 지정하여 제출하는 방식에 대한 예시 입니다.   
    
 <br>
+
 > A. CR 제출 시나리오   
 
 - CMM-D 가 세팅된 삼성 환경의 node (cmmd1, cmmd2, cmmd3) 에 __Manual__ 모드로 CPU, Memory NUMA 지정을 통해   
