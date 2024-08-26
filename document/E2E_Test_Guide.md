@@ -225,28 +225,28 @@ status:
 ```		  
 
 
-   <b>&#10102;<span style="color:blue">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;원하는 CXL의 Spec을 정의 합니다</span></b><br>
-   <b>&#10103;<span style="color:blue">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Spec의 속성을 정의 합니다</span></b><br>
-   <b>&#10104;<span style="color:blue">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;자원 할당을 수동으로 할당하는 속성을 정의 합니다. 여기서 CPU, Memory, nodeName을 정의 합니다</span></b><br>
-   <b>&#10105;<span style="color:blue">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;CPU 자원 할당을 String 형으로 지정합니다.  (cpuset.cpu 값을 세팅 합니다.)</span></b><br>
+   <b>&#10102;<span style="color:blue">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Define the specifications for the desired CXL configuration.</span></b><br>
+   <b>&#10103;<span style="color:blue">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Define the properties of the specification.</span></b><br>
+   <b>&#10104;<span style="color:blue">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Defines properties for manually assigning resource allocations, including CPU, Memory, and nodeName.</span></b><br>
+   <b>&#10105;<span style="color:blue">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Specifies CPU resource allocation as a string. (Set the cpuset.cpu value.)</span></b><br>
 
 <br>
 
 ## E2E Test
-위에서 기술한 바와 같이 E2E Test를 위해 아래와 같이 환경을 준비 합니다. 
->- Hardware 와 Software 요구사항에 맞는 환경 구축   
->- Openshift Cluster 설치   
->- Web Console을 통한 Operator 설치   
->- CRD(Custom Resource Definition) 분석
+Prepare the environment for the E2E Test as described above. 
+>- Build an environment that meets the specified hardware and software requirements.   
+>- Openshift Cluster Installation   
+>- Installing the Operator through the Web Console.   
+>- Analysis of CRD (Custom Resource Definition)
 <br>
 
-준비 이후 아래와 같이 테스트를 진행 합니다.   
+After preparation, proceed with the test as follows.
 
 <br>
    
 
-### Test 시나리오 #1
-CMM-D 가 세팅된 삼성 환경의 node (cmmd1, cmmd2, cmmd3) 에 Manual 모드로 CPU, Memory NUMA 지정을 통해 지정된 CPU와 Memory가 잘 활용 되는지를 테스트 합니다.
+### Test Scenario #1
+Test whether the designated CPU and memory are well utilized by specifying CPU and memory NUMA in manual mode on nodes (cmd1, cmmd2, cmmd3) in the Samsung environment with CMM-D set.
   
 <br>    
 
