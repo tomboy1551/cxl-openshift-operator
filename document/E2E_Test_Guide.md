@@ -1,7 +1,7 @@
 # Samsung CMM-D for Operator Test Environment
 <br>
 
-## Hardware 구성
+## Hardware Configuration
 |Node|H/W|Usage|CPU|Local Memory|CXL|etc|
 |-----|----------|-----|-----|---------|----------|-----------|
 |node #1|Dell|KVM|Intel <br> 96 Core|512 GB|NA|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|
@@ -11,8 +11,8 @@
    
 <br>   
 
-## Software 구성
- Software 들의 버젼정보는 아래와 같습니다.
+## Software Configuration
+ Software version information is as follows:
 
 ```bash
 $ oc version
@@ -31,61 +31,61 @@ RHEL_VERSION="9.2"
 <br>
    
 
-## Test 시나리오 대상 node 정보
- E2E Test 시나리오 대상 node에 대한 정보는 아래와 같습니다.   
+## Test Scenario Target Node Information
+ Information about the target node for the End-to-End (E2E) test scenario is as follows:   
 
 
  <br>
 
 
 
-## Operator 기능에 대한 테스트 방법
-Samsung CMM-D Operator를 사용하는 방법에 대한 설명 입니다.  
+## How to Test Operator Functions
+This is an explanation of how to use the Samsung CMM-D Operator.  
 <br>
    
-1. Openshift Cluster 설치
-- CMM-D Operator 를 테스트 진행 하기 위해 위에서 기술 하였던 H/W, S/W 환경과 같이 CMM-D 가 세팅 되어 있는 서버 환경에 Openshift Cluster를 설치 합니다.   
-  설치에 대한 자세한 방법은 [Redhat Openshift 설치방법을](https://docs.redhat.com/ko/documentation/openshift_container_platform/4.9/html-single/installing/index) 참조 바랍니다.
-2. Redhat Operator Hub Web Console을 통한 Operator 설치   <br><br>
-	1) Redhat OCP Web Console Operator 검색   <br>  
-	   아래 그림은 Redhat OCP Web Console 접속시 첫 화면 입니다.   
+1. Openshift Cluster Installation
+- To test the CMM-D Operator, an OpenShift Cluster must be installed in a server environment where CMM-D is configured, as described in the hardware and software environment above.
+  For detailed installation instructions, please refer to the [Red Hat OpenShift installation guide](https://docs.redhat.com/ko/documentation/openshift_container_platform/4.9/html-single/installing/index).
+  
+2. Installing the Operator via the Red Hat Operator Hub Web Console   <br><br>
+	1) Search for Operators in the Red Hat OCP Web Console   <br>  
+	   The image below shows the first screen when accessing the Red Hat OCP Web Console.   
 
 	   ![image 1 - Web Console Main Screen](./images/webconsole_main.png)   
 	   <br>
 
-	   아래 그림은 Redhat OCP Web Console에서 Operator를 검색 하기위해 OperatorHub 메뉴를 클릭 했을 때의 화면 입니다.   
+	   The image below shows the screen that appears when you click the OperatorHub menu to search for an operator in the Red Hat OCP Web Console.   
 
 	   ![image 2 - Web Console Operator Search](./images/webconsole_operator_select.png)   
 	   <br>
 
-	   아래 그림은 Samsung CMM-D for Operator를 검색하기위해 검색 하는 화면 입니다. 검색어를 입력 하면 해당 검색를   
-	   만족하는 Operator들이 검색 됩니다.   
+	   The image below shows the search screen for finding the Samsung CMM-D Operator. When you enter a search term, the matching operators will be displayed.   
 
 	   ![image 3 - Web Console Operator Search2](./images/webconsole_operator_search.png)   
 	   <br>
 
-	2) Operator 선택 및 설치 옵션 지정   
+	2) Select the Operator and Specify Installation Options   
 	
-	   아래 그림은 1)번에서 검색한 Operator를 클릭 했을 때 설치 화면 입니다.   
-	   추가적으로 설치 시 필요한 옵션을 선택한 후 "Install" 버튼을 눌러 설치를 진행 합니다.   
+	   The image below shows the installation screen that appears when you click on the operator found in step 1.
+           After selecting the necessary installation options, click the 'Install' button to proceed.   
 
 	   ![image 4 - Web Console Operator ](./images/webconsole_operator_install_2.png)   
 	   <br>
 
-	3) Operator 설치   
+	4) Operator Installation   
 	
-	   아래 그림은 2)번 그림에서 Install 버튼을 눌렀을때 설치 중 화면 입니다.   <br>
+	   The image below shows the installation screen that appears when you click the 'Install' button, as shown in the previous image.   <br>
 
 	   ![image 5 - Web Console Operator Install](./images/webconsole_operator_install_3.png)   
 	   <br>
 
-	   아래 그림은 Operator 설치가 완료 되었을 때의 화면 입니다.   
+	   The image below shows the screen displayed after the operator installation is completed.   
 
 	   ![image 6 - Web Console Operator Install 2](./images/operator_install_success.png)   
 	   <br><br>   
 
 3. CRD (Custom Resource Definition)   
-		- CRD는 아래와 같이 정의 되었습니다. 이를 바탕으로 CR를 제출 합니다.
+		- CRD is defined as follows. Based on this definition, submit a Custom Resource (CR).
 		   
 ```yaml
 apiVersion: apiextensions.k8s.io/v1					<1>
@@ -124,7 +124,7 @@ spec:
 
 ```		
 
-   <b>&#10102;<span style="color:blue">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;API version을 정의 합니다</span></b><br>
+   <b>&#10102;<span style="color:blue">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Define the API version.</span></b><br>
    <b>&#10103;<span style="color:blue">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;해당 YAML 문서의 종류를 정의 하는 항목으로 Custom Resource Definition 을 정의 합니다</span></b><br>
    <b>&#10104;<span style="color:blue">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;CRD가 지원하는 version 목록을 정의합니다</span></b><br>
    <b>&#10105;<span style="color:blue">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;해당 CRD version의 이름을 정의 합니다</span></b><br>
