@@ -330,13 +330,13 @@ spec:
 > B. Pre-Setting Details   
 
 - Target Node : cmmd2
-- Create Permission : ServiceAccount 및 권한 생성 작업 진행
-- Resource Quota : cmmd2 node CMM-D에 400 GB Pod 할당
+- Create Permission : Proceed with Creating the ServiceAccount and Assigning Permissions
+- Resource Quota : Allocate a 400 GB Pod to the CMM-D on the cmmd2 node
 <br>
 
 > C. Execution Details   
 
-- Target Node : 모든 nodes (cmmd1, cmmd2, cmmd3)
+- Target Node : All nodes (cmmd1, cmmd2, cmmd3)
 - allocationMode : auto
 - Resource Quota : 200 GB
 - Resource Reclamation through Pod Creation and Deletion  
