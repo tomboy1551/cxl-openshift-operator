@@ -1,11 +1,9 @@
 # Operator`s Quick User Guide for Samsung CMM-D
-Samsung CMM-D for Operator를 사용하기 위한 Hardware와 Software 환경 구성과 Operator 설치 및 활용 방법에 대한 빠른 가이드 내용을 설명 합니다. 상세한 Hardware 사양과 BIOS 세팅 사항은 [System Requirment](./CXL_requierments.md) 문서를 참조하세요.
-   
-
+This guide provides a quick overview of configuring the hardware and software environment to use the Samsung CMM-D Operator, as well as instructions for installing and using the Operator. For detailed hardware specifications and BIOS settings, please refer to the [System Requirements](./CXL_requierments.md) document.
 
 <br>
 
-## Hardware 구성
+## Hardware Configuration
 |Node|H/W|Usage|CPU|Local Memory|CXL|etc|
 |-----|----------|-----|-----|---------|----------|-----------|
 |node #1|Dell|KVM|Intel <br> 96 Core|512 GB|NA|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|
@@ -15,8 +13,8 @@ Samsung CMM-D for Operator를 사용하기 위한 Hardware와 Software 환경 �
    
 <br>   
 
-## Software 구성
- Software 들의 버젼정보는 아래와 같습니다.
+## Software Configuration
+Software version information is as follows:
 
 ```bash
 $ oc version
@@ -35,56 +33,56 @@ RHEL_VERSION="9.2"
 <br>
    
 
-## Operator 설치 및 사용법
-Samsung CMM-D Operator를 사용하는 방법에 대한 설명 입니다.  
+## How to Install and Use the Operator
+This is an explanation of how to use the Samsung CMM-D Operator.  
 <br>
    
-1. Openshift Cluster 설치
-- CMM-D Operator 를 테스트 진행 하기 위해 위에서 기술 하였던 H/W, S/W 환경과 같이 CMM-D 가 세팅 되어 있는 서버 환경에 Openshift Cluster를 설치 합니다.   
-  설치에 대한 자세한 방법은 [Redhat Openshift 설치방법을](https://docs.redhat.com/ko/documentation/openshift_container_platform/4.9/html-single/installing/index) 참조 바랍니다.
-2. Redhat Operator Hub Web Console을 통한 Operator 설치   <br><br>
-	1) Redhat OCP Web Console Operator 검색   <br>  
-	   아래 그림은 Redhat OCP Web Console 접속시 첫 화면 입니다.   
+1. OpenShift Cluster Installation
+- To test the CMM-D Operator, an OpenShift Cluster must be installed in a server environment with CMM-D configured, as described in the hardware and software environment above.
+  For detailed installation instructions, please refer to the [Red Hat OpenShift installation documentation](https://docs.redhat.com/ko/documentation/openshift_container_platform/4.9/html-single/installing/index).
+  
+2. Operator Installation via Red Hat Operator Hub Web Console   <br><br>
+	1) Search for Operators in the Red Hat OCP Web Console   <br>  
+	   The image below shows the first screen when accessing the Red Hat OCP Web Console.   
 
 	   ![image 1 - Web Console Main Screen](./images/webconsole_main.png)   
 	   <br>
 
-	   아래 그림은 Redhat OCP Web Console에서 Operator를 검색 하기위해 OperatorHub 메뉴를 클릭 했을 때의 화면 입니다.   
+	   The image below shows the screen that appears when you click the OperatorHub menu to search for an operator in the Red Hat OCP Web Console.   
 
 	   ![image 2 - Web Console Operator Search](./images/webconsole_operator_select.png)   
 	   <br>
 
-	   아래 그림은 Samsung CMM-D for Operator를 검색하기위해 검색 하는 화면 입니다. 검색어를 입력 하면 해당 검색를   
-	   만족하는 Operator들이 검색 됩니다.   
+	   The image below shows the search screen for finding the Samsung CMM-D Operator.
+           Enter a search term to find relevant operators.   
 
 	   ![image 3 - Web Console Operator Search2](./images/webconsole_operator_search.png)   
 	   <br>
 
-	2) Operator 선택 및 설치 옵션 지정   
+	3) Select the Operator and Specify Installation Options   
 	
-	   아래 그림은 1)번에서 검색한 Operator를 클릭 했을 때 설치 화면 입니다.   
-	   추가적으로 설치 시 필요한 옵션을 선택한 후 "Install" 버튼을 눌러 설치를 진행 합니다.   
+	   The image below shows the installation screen that appears when you click on the operator found in step 1). After selecting the necessary installation options, click the 'Install' button to proceed.   
 
 	   ![image 4 - Web Console Operator ](./images/webconsole_operator_install_2.png)   
 	   <br>
 
-	3) Operator 설치   
+	4) Operator Installation   
 	
-	   아래 그림은 2)번 그림에서 Install 버튼을 눌렀을때 설치 중 화면 입니다.   <br>
+	   The image below shows the installation screen that appears when you click the 'Install' button in the previous image.   <br>
 
 	   ![image 5 - Web Console Operator Install](./images/webconsole_operator_install_3.png)   
 	   <br>
 
-	   아래 그림은 Operator 설치가 완료 되었을 때의 화면 입니다.   
+	   The image below shows the screen displayed upon completion of the operator installation.   
 
 	   ![image 6 - Web Console Operator Install 2](./images/operator_install_success.png)   
 	   <br><br>   
 
-3. Samsung CMM-D for Operator 사용예   
-다음은 Samsung CMM-D for Operator를 사용하기 위해 필요한 CRD에 대한 설명과 CRD를 기본으로 한 CR을 제출 하는 방법과 CR을 통해 생성된 Pod를 확인 하고 삭제 하는 방식을 2가지 예를 통해 설명 합니다.
+3. Samsung CMM-D for Operator Usage Examples   
+The following explains the Custom Resource Definition (CRD) required for using Samsung CMM-D for Operator, how to submit a Custom Resource (CR) based on the CRD, and how to check and delete Pods created through the CR, illustrated with two examples.
 
 	1) CRD (Custom Resource Definition)   
-		- CRD는 Operator를 통해 Pod를 생성하는데 필수적인 정의 내용입니다. 아래 내용에서 설명합니다.
+		- CRD (Custom Resource Definition) is essential for creating a Pod through an Operator. This is explained below.
 		   
 ```yaml
 apiVersion: apiextensions.k8s.io/v1					<1>
@@ -123,11 +121,11 @@ spec:
 
 ```		
  
-   <b>&#10102; <span style="color:blue">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;API version을 정의 합니다</span></b><br>
-   <b>&#10103; <span style="color:blue">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;해당 YAML 문서의 종류를 정의 하는 항목으로 Custom Resource Definition 을 정의 합니다</span></b><br>
-   <b>&#10104;<span style="color:blue">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;CRD가 지원하는 version 목록을 정의합니다</span></b><br>
-   <b>&#10105; <span style="color:blue">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;해당 CRD version의 이름을 정의 합니다</span></b><br>
-   <b>&#10106;<span style="color:blue">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Resource의 스키마를 정의 합니다</span></b><br>
+   <b>&#10102; <span style="color:blue">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Define the API version</span></b><br>
+   <b>&#10103; <span style="color:blue">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Defines the type of YAML document, specified as a Custom Resource Definition (CRD) document.</span></b><br>
+   <b>&#10104;<span style="color:blue">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Defines the list of versions supported by the CRD.</span></b><br>
+   <b>&#10105; <span style="color:blue">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Defines the name of the corresponding CRD version.</span></b><br>
+   <b>&#10106;<span style="color:blue">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Define the resource schema</span></b><br>
 <br>   
    
 
@@ -171,16 +169,16 @@ spec:
 
 ```		
 
-   <b>&#10102;<span style="color:blue">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;원하는 CXL의 Spec을 정의 합니다</span></b><br>
-   <b>&#10103;<span style="color:blue">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Spec의 속성을 정의 합니다</span></b><br>
-   <b>&#10104;<span style="color:blue">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;자원 할당을 수동으로 할당하는 속성을 정의 합니다. 여기서 CPU, Memory, nodeName을 정의 합니다</span></b><br>
-   <b>&#10105;<span style="color:blue">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;CPU 자원 할당을 String 형으로 지정합니다.  (cpuset.cpu 값을 세팅 합니다.)</span></b><br>
-   <b>&#10106;<span style="color:blue">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Memory에 대한 자원 할당을 숫자를 사용한 String 형으로 지정합니다. (cpuset.mems 값을 세팅 합니다.)</span></b><br>
-   <b>&#10107;<span style="color:blue">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;자원을 할당할 node의 이름을 String 형으로 지정 합니다</span></b><br>
-   <b>&#10108;<span style="color:blue">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;자원할당 Mode로 auto (자동 자원할당) 와 manual (수동자원할당) 중 하나를 지정합니다</span></b><br>
-   <b>&#10109;<span style="color:blue">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;CXL 사용여부를 정의 합니다</span></b><br>
-   <b>&#10110;<span style="color:blue">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;CR의 매니 페스트를 지정 합니다</span></b><br>
-   <b>&#10111;<span style="color:blue">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Spec 속성 중 필수 fields 목록을 나열합니다. 여기서는 ‘allocateMode’, ‘enable’, ‘payload’ 가 필수 입니다</span></b><br>   	
+   <b>&#10102;<span style="color:blue">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Define the specifications for the desired CXL</span></b><br>
+   <b>&#10103;<span style="color:blue">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Define the properties of the specification</span></b><br>
+   <b>&#10104;<span style="color:blue">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Defines properties for manually assigning resource allocations, including CPU, Memory, and nodeName.</span></b><br>
+   <b>&#10105;<span style="color:blue">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Specifies CPU resource allocation as a string type. (Set the cpuset.cpu value.)</span></b><br>
+   <b>&#10106;<span style="color:blue">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Specifies resource allocation for memory as a string type using numbers. (Set the cpuset.mems value.)</span></b><br>
+   <b>&#10107;<span style="color:blue">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Specify the name of the node to which resources will be allocated, in string format.</span></b><br>
+   <b>&#10108;<span style="color:blue">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Specify the resource allocation mode as either auto (automatic resource allocation) or manual (manual resource allocation).</span></b><br>
+   <b>&#10109;<span style="color:blue">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Defines whether to use CXL.</span></b><br>
+   <b>&#10110;<span style="color:blue">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Specifies the manifest for the Custom Resource (CR).</span></b><br>
+   <b>&#10111;<span style="color:blue">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Lists the required fields among the Spec properties. Here, allocateMode, enable, and payload are mandatory.</span></b><br>   	
 <br>   
 
 ```yaml
@@ -224,34 +222,33 @@ status:
 ```		  
 
 
-   <b>&#10102;<span style="color:blue">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;원하는 CXL의 Spec을 정의 합니다</span></b><br>
-   <b>&#10103;<span style="color:blue">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Spec의 속성을 정의 합니다</span></b><br>
-   <b>&#10104;<span style="color:blue">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;자원 할당을 수동으로 할당하는 속성을 정의 합니다. 여기서 CPU, Memory, nodeName을 정의 합니다</span></b><br>
-   <b>&#10105;<span style="color:blue">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;CPU 자원 할당을 String 형으로 지정합니다.  (cpuset.cpu 값을 세팅 합니다.)</span></b><br>
+   <b>&#10102;<span style="color:blue">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Define the specifications for the desired CXL configuration.</span></b><br>
+   <b>&#10103;<span style="color:blue">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Define the properties of the specification.</span></b><br>
+   <b>&#10104;<span style="color:blue">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Defines properties for manually assigning resource allocations, including CPU, Memory, and nodeName.</span></b><br>
+   <b>&#10105;<span style="color:blue">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Specifies CPU resource allocation as a string. (Set the cpuset.cpu value.)</span></b><br>
 
 <br>
 
 
 
-2) CR(Custom Resource) 제출 Sample 1 - Manual mode   
- 	- 사용자가 CR 에서 제공하는 Properties를 manual로 지정하여 제출하는 방식에 대한 예시 입니다.   
+2) Submit a Custom Resource (CR) Sample 1 - Manual mode   
+ 	- This is an example of how a user manually specifies and submits the properties defined by the Custom Resource (CR).   
    
 <br>
 
-> A. CR 제출 시나리오   
+> A. Custom Resource (CR) Submission Scenario   
 
-- CMM-D 가 세팅된 삼성 환경의 node (cmmd1, cmmd2, cmmd3) 에 __Manual__ 모드로 CPU, Memory NUMA 지정을 통해   
- 지정된 CPU와 Memory가 잘 활용 되는지를 테스트 합니다   
+- By specifying CPU and Memory NUMA in __Manual mode__ on nodes (cmd1, cmmd2, cmmd3) in the Samsung environment with CMM-D configured, test whether the designated CPU and memory are utilized correctly.   
 <br>		
 
-> B. 실행 내용   
+> B. Execution Details   
 
-- 대상 노드 : cmmd1 (intel cpu node)
+- Target Node : cmmd1 (intel cpu node)
 - allocationMode : manual
 - memory : 2 (CXL Memory NUMA)
 - cpu : 0-23 (cpu 0)
-- 리소스 할당량 : 100 GB
-- Pod 생성 및 삭제를 통한 리소스 회수   
+- Resource Quota : 100 GB
+- Resource Reclamation through Pod Creation and Deletion   
 <br>
 
 > C. CR (Custom Resource)   
@@ -291,58 +288,58 @@ spec:
 
 ```
    
-   <b>&#10102;<span style="color:blue">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Resource를 지정하는 mode에 대한 기술사항 입니다. (manual : Resource를 할당하는 mode, auto : 가장 효율적인 node를 선택 하여 자동으로 할당 하는 mode)</span></b><br>
-   <b>&#10102;<span style="color:blue">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;manual mode 일때 지정될 CPU Core 정의</span></b><br>
-   <b>&#10103;<span style="color:blue">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;manual mode 일때 지정될 Memory NUMA 정의</span></b><br>
-   <b>&#10104;<span style="color:blue">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;생성할 Pod의 대상 node 이름 정의</span></b><br>
-   <b>&#10105;<span style="color:blue">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;CXL Device 활용 여부 (true : 사용, false : 비 사용)</span></b><br>
-   <b>&#10106;<span style="color:blue">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;요청/제한 Resource를 기술 합니다.</span></b><br>
+   <b>&#10102;<span style="color:blue">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;This is a technical description of the resource allocation modes(Manual: A mode for explicitly allocating resources by specifying them., Auto: A mode for automatically allocating resources by selecting the most efficient node.)</span></b><br>
+   <b>&#10102;<span style="color:blue">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Definition of CPU Cores when in Manual Mode</span></b><br>
+   <b>&#10103;<span style="color:blue">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Definition of Memory NUMA when in Manual Mode</span></b><br>
+   <b>&#10104;<span style="color:blue">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Define the target node name for the Pod to be created</span></b><br>
+   <b>&#10105;<span style="color:blue">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Whether to utilize the CXL device (true: use, false: do not use)</span></b><br>
+   <b>&#10106;<span style="color:blue">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Describes the requested/limited resources.</span></b><br>
 <br>   
 
-> D. CR 제출 (Pod 생성)   
+> D. Submit the Custom Resource (Create Pod)   
    
    ![image 1 - Manual Mode CR 제출 ](./images/cr_creation_pod.png)   
 <br>   
 
-> E. 생성된 Pod 확인   
+> E. Check the Created Pod   
    
-   ![image 1 - Manual Mode Pod 확인 ](./images/cr_create_check_pod.png)   
+   ![image 1 - Manual Mode Pod Check ](./images/cr_create_check_pod.png)   
 <br>   
 
-> F. 생성된 Pod 삭제   
+> F. Delete the Created Pod   
    
-   ![image 1 - Manual Mode Pod 삭제 ](./images/cr_delete_pod.png)   
+   ![image 1 - Manual Mode Pod delete ](./images/cr_delete_pod.png)   
 <br>   
 
-> G. 삭제된 Pod 확인   
+> G. Check Deleted Pods   
    
-   ![image 1 - Manual Mode Pod 삭제 확인](./images/cr_delete_check_pod.png)   
+   ![image 1 - Manual Mode Pod Check Delete](./images/cr_delete_check_pod.png)   
 <br>   
 
 
 
-3)  CR(Custom Resource) 제출 Sample 2 - Auto mode   
-  - 사용자가 CR 에서 제공하는 Properties를 auto로 지정하여 제출하는 방식에 대한 예시 입니다. auto mode는 생성할 Pod가 가장 효율적인 node를 자동으로 지정 하도록 스케쥴링 하는 기능을 제공합니다.   
+3)  Submit Custom Resource (CR) Sample 2 - Auto mode   
+  - This is an example of how a user submits the properties specified by CR using the auto mode. The auto mode provides a scheduling function that automatically designates the most efficient node for the Pod to be created.   
    
 <br>
-> A. CR 제출 시나리오   
+> A. Custom Resource (CR) Submission Scenario   
 
-- CMM-D 가 세팅된 삼성 환경의 nodes (cmmd1, cmmd2, cmmd3) 중 cmmd2 node에 400GB 의 Pod가 할당되어 있는 상태에서 Auto mode로 200GB 의 Pod 생성요청을 제출 했을때, 3개 node 중 Pressure가 가장 적은 node에 자동으로 Pod가 생성 되는지 테스트 합니다   
+- If you submit a request for generating a 200GB pod in Auto mode with 400GB pod assigned to the cmmd2 node among the nodes (cmmd1, cmmd2, cmmd3) in a Samsung environment with CMM-D set, test whether the pod is automatically generated in the node with the least press among the three nodes   
 <br>		
 
-> B. 사전 세팅 사항   
+> B. Pre-Setting Details   
 
-- 대상 노드 : cmmd2
-- 권한 생성 : ServiceAccount 및 권한 생성 작업 진행
-- 리소스 할당량 : cmmd2 node CMM-D에 400 GB Pod 할당
+- Target Node : cmmd2
+- Create Permission : ServiceAccount 및 권한 생성 작업 진행
+- Resource Quota : cmmd2 node CMM-D에 400 GB Pod 할당
 <br>
 
-> C. 실행 내용   
+> C. Execution Details   
 
-- 대상 노드 : 모든 nodes (cmmd1, cmmd2, cmmd3)
+- Target Node : 모든 nodes (cmmd1, cmmd2, cmmd3)
 - allocationMode : auto
-- 리소스 할당량 : 200 GB
-- Pod 생성 및 삭제를 통한 리소스 회수   
+- Resource Quota : 200 GB
+- Resource Reclamation through Pod Creation and Deletion  
 <br>
 
 > D. CR (Custom Resource)   
@@ -391,27 +388,27 @@ spec:
    
 
 
-   <b>&#10102;<span style="color:blue">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Resource를 지정하는 mode에 대한 기술사항 입니다. (manual : Resource를 할당하는 mode, auto : 가장 효율적인 node를 선택 하여 자동으로 할당 하는 mode)</span></b><br>
-   <b>&#10103;<span style="color:blue">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;CXL Device 활용 여부 (true : 사용, false : 비 사용)</span></b><br>
-   <b>&#10104;<span style="color:blue">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;manual mode 일때 지정될 Memory NUMA 정의</span></b><br>
+   <b>&#10102;<span style="color:blue">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;This is a technical description of the resource allocation modes(Manual: A mode for explicitly allocating resources by specifying them., Auto: A mode for automatically allocating resources by selecting the most efficient node.)</span></b><br>
+   <b>&#10103;<span style="color:blue">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Whether to utilize the CXL device (true: use, false: do not use)</span></b><br>
+   <b>&#10104;<span style="color:blue">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Definition of Memory NUMA when in Manual Mode</span></b><br>
 <br>   
 
-> E. CR 제출 (Pod 생성)   
+> E. Submit the Custom Resource (Create Pod)   
    
-   ![image 1 - Manual Mode CR 제출 ](./images/cr_creation_pod.png)   
+   ![image 1 - Manual Mode CR Submit ](./images/cr_creation_pod.png)   
 <br>   
 
-> F. 생성된 Pod 확인   
+> F. Check the Created Pod   
    
-   ![image 1 - Manual Mode Pod 확인 ](./images/cr_create_check_pod.png)   
+   ![image 1 - Manual Mode Pod Check ](./images/cr_create_check_pod.png)   
 <br>   
 
-> G. 생성된 Pod 삭제   
+> G. Delete the Created Pod   
    
-   ![image 1 - Manual Mode Pod 삭제 ](./images/cr_delete_pod.png)   
+   ![image 1 - Manual Mode Pod Delete ](./images/cr_delete_pod.png)   
 <br>   
 
-> H. 삭제된 Pod 확인   
+> H. Check Deleted Pods  
    
-   ![image 1 - Manual Mode Pod 삭제 확인](./images/cr_delete_check_pod.png)   
+   ![image 1 - Manual Mode Pod Check Delete](./images/cr_delete_check_pod.png)   
 <br>
