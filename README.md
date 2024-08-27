@@ -1,6 +1,4 @@
 # Samsung CMM-D for Red Hat Openshift Operator
-[![Go Report Card](https://goreportcard.com/badge/github.com/kubeflow/spark-operator)](https://goreportcard.com/report/github.com/kubeflow/spark-operator)
-[![License](http://img.shields.io/:license-apache-blue.svg)](http://www.apache.org/licenses/LICENSE-2.0.html)
 
 Samsung Operator for CMM-D provides a way to integrate and utilize CXL* Memory Module Device manufactured by Samsung in PasS environment.
 This is implemented by utilizing [technology that utilizes Linux NUMA in CMM-D memory hierarchy](https://semiconductor.samsung.com/news-events/tech-blog/utilizing-linux-numa-in-cmm-d-memory-tiering/) and CoreOs and Openshift Operator technology provided by RedHat.
