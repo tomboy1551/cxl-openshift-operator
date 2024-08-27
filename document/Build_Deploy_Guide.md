@@ -1,4 +1,4 @@
-# Samsung CMM-D Operator의 Build 및 Deploy 가이드
+# How to Build and Deploy the Samsung CMM-D Operator
 This section explains how to build and deploy the Samsung CMM-D Operator to the OLM's Community catalog, allowing users to conveniently access and utilize it through the OLM Web Console.   
 <br>
 
