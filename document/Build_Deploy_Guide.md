@@ -12,7 +12,7 @@ Operator를 Build 하고 Push 하기위해 아래와 같은 명령을 실행 합
 ```bash
 $> make docker-build docker-push IMG=<registry>/<user>/<image_name>:<tag>
 ```   
-
+<br>
 
 ### Bundle
 - OLM 환경에서 Operator 를 사용하기 위해 Operator 이미지 빌드 외에도 Bundle 형식의  작성이 필요 합니다.
