@@ -93,18 +93,17 @@ community-operators-prod
 
 ![image 2 - community-operator Fork](./images/operator_community_fork.png)   
 
-<br>  
 <br>
 
 > - Pull Request 이후에 Redhat Operator Communiy 에서 Pull Request 한 Bundle에 대해 체크 및 확인 절차를 진행 합니다.   
 > ![image 3 - community-operator PR](./images/operator-community-PR.png)   
 
-<br>   
+<br><br>   
 2. Title은 Operator<operator 명>(<versionA>) 형식으로 작성 합니다.   
 
 ![image 4 - community-operator Fork Title](./images/operator_community_title.png)   
 
-<br>
+<br><br>
 
 3. Pull Request 생성 후 Validation 이 진행되고 Merge 가 완료 되면, 일정시간 후 OperatorHub 의 Community 카탈로그 소스 Operator 목록에 반영 됩니다.   
 
