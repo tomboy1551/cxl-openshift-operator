@@ -1,5 +1,5 @@
 # Operator`s Quick User Guide for Samsung CMM-D
-This guide provides a quick overview of configuring the hardware and software environment to use the Samsung CMM-D Operator, as well as instructions for installing and using the Operator. For detailed hardware specifications and BIOS settings, please refer to the [System Requirements](./CXL_requierments.md) document.
+This guide provides a quick overview of configuring the hardware and software environment to use the Samsung CMM-D Operator, as well as instructions for installing and using the Operator. For detailed hardware specifications and BIOS settings, please refer to the [System Requirements](./CXL_requiements.md) document.
 
 <br>
 
