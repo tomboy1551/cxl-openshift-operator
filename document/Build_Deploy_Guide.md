@@ -96,7 +96,7 @@ community-operators-prod
 <br>
 
 > - Pull Request 이후에 Redhat Operator Communiy 에서 Pull Request 한 Bundle에 대해 체크 및 확인 절차를 진행 합니다.   
-> ![image 3 - community-operator PR](./images/operator_community_PR.png)   
+> ![image 3 - community-operator PR](./images/operator_community-PR.png)   
 
 2. Title은 Operator<operator 명>(<versionA>) 형식으로 작성 합니다.   
 
