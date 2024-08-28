@@ -1,6 +1,6 @@
 # Samsung CMM-D for Red Hat Openshift Operator
 ![GitHub go.mod Go version](https://img.shields.io/github/go-mod/go-version/wunicorns/gostress) 
-[![Go Report Card] (https://goreportcard.com/badge/github.com/kubernetes/kubernetes)](https://goreportcard.com/report/github.com/kubernetes/kubernetes)
+![Go Report Card] (https://goreportcard.com/badge/github.com/kubernetes/kubernetes)(https://goreportcard.com/report/github.com/kubernetes/kubernetes)
 ![GitHub release (latest SemVer)](https://img.shields.io/github/v/release/wunicorns/gostress?sort=semver)   
 
 Samsung Operator for CMM-D provides a way to integrate and utilize CXL* Memory Module Device manufactured by Samsung in PasS environment.
